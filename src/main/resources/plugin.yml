@@ -1,0 +1,56 @@
+#
+# See https://docs.papermc.io/paper/dev/plugin-yml for more information.
+#
+
+# name of the plugin
+name: ${project.name}
+
+# version of the plugin
+version: ${project.version}
+
+# path to the main class of the plugin
+main: ${main.class}
+
+# author of the plugin
+author: ${author}
+api-version: '1.8' # <- change this to the minecraft version wanted
+
+# commands of the plugins
+commands:
+  create-world:
+    description: command to create a world
+    usage: /create-world <name>
+    permission: worldcreator.create-world
+    aliases:
+      - cw
+  delete-world:
+    description: command to delete a world
+    usage: /delete-world <name>
+    permission: worldcreator.delete-world
+    aliases:
+      - dw
+  teleport-world:
+    description: command to teleport to a world
+    usage: /teleport-world <name>
+    permission: worldcreator.teleport-world
+    aliases:
+      - tpw
+  get-world:
+    description: command to get the world where the player is
+    usage: /get-world
+    permission: worldcreator.get-world
+    aliases:
+      - gw
+  list-world:
+    description: command to get a list of all the world of the server
+    usage: /list-world
+    permission: worldcreator.list-world
+    aliases:
+      - lw
+  spawn:
+    description: command to teleport to the spawn
+    usage: /spawn
+    permission: worldcreator.spawn
+    aliases:
+      - lobby
+      - hub

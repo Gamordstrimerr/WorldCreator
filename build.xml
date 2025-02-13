@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<!DOCTYPE xml>
+<project name="MiniGamesPlugin" default="Build">
+    <target name="Build">
+        <jar jarfile="D:/Code/Java/Project Intellij IDEA/Plugin Minecraft/MiniGamesPlugin/server/plugins/${ant.project.name}.jar"
+             basedir="./target/classes/" includes="**/*"></jar>
+    </target>
+</project>
