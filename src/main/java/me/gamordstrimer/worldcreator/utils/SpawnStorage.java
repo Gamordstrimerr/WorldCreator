@@ -13,10 +13,11 @@ public class SpawnStorage {
     private YamlConfiguration config;
 
     public SpawnStorage() {
-        spawnFile = new File("plugins/WorldCreator/spawn.yml");
+        spawnFile = new File("plugins/WorldCreator/spawn.yml"); // the file where the spawn in store
         config = YamlConfiguration.loadConfiguration(spawnFile);
     }
 
+    // --- STORE THE SPAWN LOCATION ---
     public void storeSpawn(Location spawnLocation) {
         // Set yaw and pitch to 0.0
         spawnLocation.setYaw(0.0f);
@@ -31,12 +32,14 @@ public class SpawnStorage {
         config.set("spawn.location.pitch", spawnLocation.getPitch());
 
         try {
+            // try to save the spawn in the spawnfile
             config.save(spawnFile);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
+    // --- LOAD THE SPAWN LOCATION ---
     public Location loadSpawn() {
         if (spawnFile.exists()) {
             if (config.contains("spawn.location")) {

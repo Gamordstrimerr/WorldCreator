@@ -10,7 +10,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class WorldCreator extends JavaPlugin {
 
     private static WorldCreator instance;
-    private Location spawn;
 
     // ===================================================================================
     // WHEN THE PLUGIN START
@@ -21,7 +20,6 @@ public class WorldCreator extends JavaPlugin {
         System.out.println("WorldCreator On!");
 
         instance = this;
-        spawn = new Location(Bukkit.getWorld("world"), -56,72,201); // define the spawn location
         new WorldManager().loadWorlds(); //load the worlds contain in the worldFile
 
         // Register differents Assets
@@ -62,13 +60,5 @@ public class WorldCreator extends JavaPlugin {
 
     public static WorldCreator getInstance() {
         return instance;
-    }
-
-    // ===================================================================================
-    // GETTER FOR OTHER VARIABLES
-    // ===================================================================================
-
-    public Location getSpawnLocation() {
-        return spawn;
     }
 }

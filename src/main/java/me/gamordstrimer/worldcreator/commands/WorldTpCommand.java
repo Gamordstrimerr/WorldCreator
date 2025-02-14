@@ -58,11 +58,11 @@ public class WorldTpCommand implements CommandExecutor {
                         }
                     } else {
                         if (Bukkit.getWorld(arg1) != null) {
-                            player.teleport(new Location(Bukkit.getWorld(arg1), 0, 100, 0));
+                            player.teleport(new Location(Bukkit.getWorld(arg1), 0, 100, 0)); //default location for each new world
                             player.sendMessage(ChatColor.YELLOW + "You got teleport to " + ChatColor.GOLD + ChatColor.BOLD + arg1);
                         } else {
                             // System.out.println("This world doesn't exist!");
-                            player.sendMessage("This world doesn't exist!");
+                            player.sendMessage(ChatColor.RED + "the world specified doesn't exist. ");
                         }
                     return true;
                 }

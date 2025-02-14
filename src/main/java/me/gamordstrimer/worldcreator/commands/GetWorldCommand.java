@@ -10,8 +10,8 @@ public class GetWorldCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
-            Player player = (Player) sender;
-            String worldName = player.getWorld().getName();
+            Player player = (Player) sender; // <-- get the player that executed the command
+            String worldName = player.getWorld().getName(); // get the world where the player is.
             player.sendMessage(ChatColor.YELLOW + "You are in the world ➡ " + ChatColor.GOLD + worldName );
             return true;
         }

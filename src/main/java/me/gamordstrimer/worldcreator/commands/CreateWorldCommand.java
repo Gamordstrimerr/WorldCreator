@@ -14,11 +14,12 @@ public class CreateWorldCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if (sender instanceof Player) {
+        if (sender instanceof Player) { // protection for console
             Player player = (Player) sender;
-            if (args.length == 1) {
-                String worldName = args[0].toLowerCase();
+            if (args.length == 1) { // check that there is only one argument to the command
+                String worldName = args[0].toLowerCase(); // set the first argument to lower case
 
+                // DEFINE THE MESSAGE
                 String message = String.join("\n",
                         messageBorder,
                         " ",
@@ -28,8 +29,8 @@ public class CreateWorldCommand implements CommandExecutor {
                         messageBorder
                         );
 
-                player.sendMessage(message);
-                new WorldManager().createWorld(worldName);
+                player.sendMessage(message); // send the "message to the player"
+                new WorldManager().createWorld(worldName); // call the class "me.gamordstrimer.worldcreator.utils.WorldManager" to get the method to create the world
                 player.sendMessage(ChatColor.GREEN + "➤ The world " + ChatColor.YELLOW + worldName + ChatColor.GREEN + " has been created!"); // message send once the world is created
                 return true;
             }
