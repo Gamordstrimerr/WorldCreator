@@ -54,3 +54,10 @@ commands:
     aliases:
       - lobby
       - hub
+  setspawn:
+    description: command to set the spawn location
+    usage: /setspawn
+    permission: worldcreator.setspawn
+    aliases:
+      - sethub
+      - setlobby

@@ -16,6 +16,7 @@ public class DeleteWorldCommand implements CommandExecutor {
 
     private File worldFile;
     private YamlConfiguration config;
+    final String messageBorder = ChatColor.RED + "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
 
     public DeleteWorldCommand() {
         worldFile = new File("plugins/WorldCreator/worlds.yml");
@@ -37,7 +38,12 @@ public class DeleteWorldCommand implements CommandExecutor {
 
                     if (existingWorlds.contains(arg1)) {
                         new WorldManager().deleteWorld(arg1);
-                        player.sendMessage(ChatColor.RED + "➤ The world " + ChatColor.DARK_RED + arg1 + ChatColor.RED + " has been deleted!");
+                        String message = String.join("\n",
+                                messageBorder,
+                                ChatColor.RED + "➤ The world " + ChatColor.DARK_RED + arg1 + ChatColor.RED + " has been deleted!",
+                                messageBorder);
+
+                        player.sendMessage(message);
                         return true;
                     }
                 } else {

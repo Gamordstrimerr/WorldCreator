@@ -52,6 +52,7 @@ public class WorldCreator extends JavaPlugin {
         getCommand("teleport-world").setExecutor(new WorldTpCommand());
         getCommand("get-world").setExecutor(new GetWorldCommand());
         getCommand("spawn").setExecutor(new SpawnCommand());
+        getCommand("setspawn").setExecutor(new SpawnCommand());
         getCommand("list-world").setExecutor(new ListWorldCommand());
     }
 

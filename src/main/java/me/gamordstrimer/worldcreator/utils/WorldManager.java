@@ -131,16 +131,12 @@ public class WorldManager {
     // --- METHOD TO TELEPORT PLAYER TO SPAWN ---
     private boolean MovePlayertoSpawn(String worldName) {
 
-        /*
-        * Maybe make the location of the
-        * spawn dynamic through config
-        * */
-        Location spawn = me.gamordstrimer.worldcreator.WorldCreator.getInstance().getSpawnLocation();
+        Spawn spawn = new Spawn();
         World world = Bukkit.getWorld(worldName); // <-- get the world with the name ("worldName")
 
         // for each player in the world, they get teleport to the spawn
         for (Player player : world.getPlayers()) {
-            player.teleport(spawn);
+            spawn.sendToSpawn(player);
         }
 
         return world.getPlayers().isEmpty(); // return TRUE if the world is empty, FALSE if there is still player in it.
