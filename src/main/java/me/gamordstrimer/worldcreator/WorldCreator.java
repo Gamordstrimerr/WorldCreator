@@ -21,7 +21,7 @@ public class WorldCreator extends JavaPlugin {
         new WorldManager().loadWorlds(); //load the worlds contain in the worldFile
 
         // Register differents Assets
-        registerEvent();
+        registerEvents();
         registerCommands();
     }
 
@@ -38,7 +38,7 @@ public class WorldCreator extends JavaPlugin {
     // FUNCTION TO REGISTER COMMANDS & EVENTS
     // ===================================================================================
 
-    private void registerEvent() {
+    private void registerEvents() {
         getServer().getPluginManager().registerEvents(new PlayerListeners(), this);
     }
 
