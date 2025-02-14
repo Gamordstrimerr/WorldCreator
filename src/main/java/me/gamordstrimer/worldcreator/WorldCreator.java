@@ -3,8 +3,6 @@ package me.gamordstrimer.worldcreator;
 import me.gamordstrimer.worldcreator.commands.*;
 import me.gamordstrimer.worldcreator.listeners.PlayerListeners;
 import me.gamordstrimer.worldcreator.utils.WorldManager;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class WorldCreator extends JavaPlugin {
